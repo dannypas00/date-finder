@@ -1,5 +1,5 @@
-# laravel-template-project project
-[![Test integration on push](https://github.com/dannypas00/laravel-template/actions/workflows/test_integration_on_push.yaml/badge.svg)](https://github.com/dannypas00/laravel-template/actions/workflows/test_integration_on_push.yaml)  
+# date-finder project
+[![Test integration on push](https://github.com/dannypas00/date-finder/actions/workflows/test_integration_on_push.yaml/badge.svg)](https://github.com/dannypas00/date-finder/actions/workflows/test_integration_on_push.yaml)  
 Insert your own readme information here
 
 ## Installation
