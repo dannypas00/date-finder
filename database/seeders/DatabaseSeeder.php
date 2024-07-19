@@ -2,15 +2,19 @@
 
 namespace Database\Seeders;
 
+use App\Models\FinderSession;
+use App\Models\SessionDate;
 use App\Models\User;
+use Exception;
+use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     * @throws Exception
      */
     public function run(): void
     {
@@ -21,5 +25,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::factory(30)->create();
+
+        FinderSession::factory()->count(5)
+            ->has(
+                SessionDate::factory()->count(random_int(1, 3))->afterCreating(
+                    fn (SessionDate $sessionDate) => $sessionDate->attendees()
+                        ->sync(
+                            User::inRandomOrder()->take(rand(3, 10))->pluck('id')
+                        )
+                ),
+                'sessionDates'
+            )
+            ->create();
     }
 }
