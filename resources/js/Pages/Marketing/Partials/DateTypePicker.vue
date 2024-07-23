@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <div class="mx-auto flex justify-center max-w-7xl px-6 lg:px-8">
     <div class="mt-20 flow-root">
       <div
         class="isolate -mt-16 grid max-w-sm grid-cols-1 gap-y-16 divide-y divide-gray-100 sm:mx-auto md:-mx-8 md:max-w-none md:grid-cols-3 md:divide-x md:divide-y-0 lg:mt-0 xl:-mx-4"
