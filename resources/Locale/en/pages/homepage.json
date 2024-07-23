@@ -4,5 +4,19 @@
   },
   "hero_subtitle": "Let us help you find the perfect dates so you can focus on the things that actually matter.",
   "hero_title": "Figure out dates with ease",
-  "start_button": "Start picking dates"
+  "start_button": "Start picking dates",
+  "types": {
+    "multiple": {
+      "description": "Schedule a collection of dates that people can sign up for",
+      "name": "Multiple Dates"
+    },
+    "recurring": {
+      "description": "Schedule a recurring date that people can opt-in to whenever they like",
+      "name": "Recurring Dates"
+    },
+    "single": {
+      "description": "Schedule a one-off date",
+      "name": "Single Date"
+    }
+  }
 }

@@ -4,10 +4,16 @@ use App\Actions\Fortify\CreateNewUser;
 use App\DataObjects\UserData;
 use App\Http\Controllers\Users\UserQueryBuilderController;
 use App\Http\Controllers\Users\UserUpdateController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 Route::inertia('/', 'Marketing/Homepage');
+Route::prefix('pick')->as('date-picker.')->group(static function () {
+    Route::inertia('single', 'DatePicker/SingleDatePicker')->name('single');
+    Route::inertia('multiple', 'DatePicker/MultipleDatePicker')->name('multiple');
+    Route::inertia('recurring', 'DatePicker/RecurringDatePicker')->name('recurring');
+});
 
 Route::middleware([
     'auth:sanctum',

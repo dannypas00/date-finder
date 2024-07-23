@@ -2,8 +2,6 @@ import {
   ArrowLeftStartOnRectangleIcon,
   CogIcon,
   UserCircleIcon,
-  TableCellsIcon,
-  SpeakerWaveIcon,
 } from '@heroicons/vue/24/outline';
 import { FunctionalComponent } from 'vue';
 
@@ -13,8 +11,7 @@ interface NavigationItem {
   icon: FunctionalComponent;
 }
 
-const layoutNavigationItems: NavigationItem[] = [
-];
+const layoutNavigationItems: NavigationItem[] = [];
 
 const userNavigationItems: NavigationItem[] = [
   { name: 'Profile', route: 'me.profile', icon: UserCircleIcon },
