@@ -45,89 +45,24 @@
           </button>
         </div>
 
-        <!-- Type menu -->
-        <div class="hidden md:ml-4 md:flex md:items-center">
-          <Menu as="div" class="relative">
-            <MenuButton
-              type="button"
-              class="flex items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
-              Month view
-              <ChevronDownIcon
-                class="-mr-1 h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
-            </MenuButton>
-
-            <transition
-              enter-active-class="transition ease-out duration-100"
-              enter-from-class="transform opacity-0 scale-95"
-              enter-to-class="transform opacity-100 scale-100"
-              leave-active-class="transition ease-in duration-75"
-              leave-from-class="transform opacity-100 scale-100"
-              leave-to-class="transform opacity-0 scale-95"
-            >
-              <MenuItems
-                class="absolute right-0 z-10 mt-3 w-36 origin-top-right overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              >
-                <div class="py-1">
-                  <MenuItem v-slot="{ active }">
-                    <a
-                      href="#"
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm',
-                      ]"
-                      >Day view</a
-                    >
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a
-                      href="#"
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm',
-                      ]"
-                      >Week view</a
-                    >
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a
-                      href="#"
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm',
-                      ]"
-                      >Month view</a
-                    >
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <a
-                      href="#"
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm',
-                      ]"
-                      >Year view</a
-                    >
-                  </MenuItem>
-                </div>
-              </MenuItems>
-            </transition>
-          </Menu>
+        <div class="hidden md:flex md:items-center">
           <div class="ml-6 h-6 w-px bg-gray-300" />
           <button
             type="button"
             class="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
-            Add event
+            {{ $t('components.month_view.pick_date_button') }}
           </button>
         </div>
+
+        <!-- Mobile menu -->
         <Menu as="div" class="relative ml-6 md:hidden">
           <MenuButton
             class="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500"
           >
-            <span class="sr-only">Open menu</span>
+            <span class="sr-only">{{
+              $t('components.month_view.open_menu')
+            }}</span>
             <EllipsisHorizontalIcon class="h-5 w-5" aria-hidden="true" />
           </MenuButton>
 
@@ -140,72 +75,31 @@
             leave-to-class="transform opacity-0 scale-95"
           >
             <MenuItems
-              class="absolute right-0 z-10 mt-3 w-36 origin-top-right divide-y divide-gray-100 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              class="absolute right-0 z-10 mt-3 w-36 origin-top-right overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             >
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
                   <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Create event</a
+                    :class="
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                    "
+                    class="block px-4 py-2 text-sm"
                   >
+                    {{ $t('components.month_view.pick_date_button') }}
+                  </a>
                 </MenuItem>
               </div>
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
                   <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Go to today</a
+                    :class="
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                    "
+                    class="block px-4 py-2 text-sm"
+                    @click="setToday"
                   >
-                </MenuItem>
-              </div>
-              <div class="py-1">
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Day view</a
-                  >
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Week view</a
-                  >
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Month view</a
-                  >
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm',
-                    ]"
-                    >Year view</a
-                  >
+                    {{ $t('components.month_view.go_to_today_mobile') }}
+                  </a>
                 </MenuItem>
               </div>
             </MenuItems>
@@ -239,36 +133,31 @@
         </div>
       </div>
 
-      <!-- Desktop dates -->
       <div
         class="flex bg-gray-200 text-xs leading-6 text-gray-700 lg:flex-auto"
       >
+        <!-- Desktop dates -->
         <div
           class="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px"
         >
           <button
             v-for="day in days"
             :key="day.date.toISOString()"
-            :class="{
-              'bg-white': day.isCurrentMonth,
-              'bg-blue-50 text-brand-light': isCurrent(day),
-              'font-semibold': isCurrent(day) || day.isToday,
-              'text-indigo-600': !isCurrent(day) && day.isToday,
-              'text-gray-900':
-                !isCurrent(day) && day.isCurrentMonth && day.isToday,
-              'text-gray-500':
-                !isCurrent(day) && !day.isCurrentMonth && !day.isToday,
-            }"
-            class="flex h-20 flex-col px-3 py-2 hover:bg-gray-100 focus:z-10"
-            @click="current = day"
+            :aria-selected="isCurrent(day)"
+            :disabled="day.isPast && day.isCurrentMonth"
+            :class="[
+              {
+                'cursor-default hover:bg-gray-200': !day.isCurrentMonth,
+                'bg-white': day.isCurrentMonth,
+                'text-indigo-600': day.isToday,
+              },
+              'disabled:cursor-default disabled:bg-gray-50 disabled:text-gray-500 disabled:hover:bg-gray-50',
+              'aria-selected:bg-blue-50 aria-selected:font-black aria-selected:text-brand-light',
+            ]"
+            class="flex h-20 flex-col px-3 py-2 hover:bg-gray-100"
+            @click="!day.isPast && day.isCurrentMonth && (current = day)"
           >
-            <time
-              :datetime="day.date.toISOString()"
-              :class="
-                day.isToday
-                  ? 'flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white'
-                  : undefined
-              "
+            <time :datetime="day.date.toISOString()"
               >{{ day.date.date() }}
             </time>
           </button>
@@ -281,30 +170,22 @@
           <button
             v-for="day in days"
             :key="day.date.toISOString()"
-            type="button"
-            :class="{
-              'bg-white': day.isCurrentMonth,
-              'text-brand-light': isCurrent(day),
-              'font-semibold': isCurrent(day) || day.isToday,
-              'text-indigo-600': !isCurrent(day) && day.isToday,
-              'text-gray-900':
-                !isCurrent(day) && day.isCurrentMonth && day.isToday,
-              'text-gray-500':
-                !isCurrent(day) && !day.isCurrentMonth && !day.isToday,
-            }"
-            class="flex h-14 flex-col px-3 py-2 hover:bg-gray-100 focus:z-10"
-            @click="current = day"
+            :aria-selected="isCurrent(day)"
+            :disabled="day.isPast && day.isCurrentMonth"
+            :class="[
+              {
+                'cursor-default hover:bg-gray-200': !day.isCurrentMonth,
+                'bg-white': day.isCurrentMonth,
+                'text-indigo-600': day.isToday,
+              },
+              'disabled:cursor-default disabled:bg-gray-50 disabled:text-gray-500 disabled:hover:bg-gray-50',
+              'aria-selected:bg-blue-50 aria-selected:font-black aria-selected:text-brand-light',
+            ]"
+            class="flex h-14 flex-col px-3 py-2 hover:bg-gray-100"
+            @click="!day.isPast && day.isCurrentMonth && (current = day)"
           >
-            <time
-              :datetime="day.date.toISOString()"
-              :class="[
-                day === current &&
-                  'flex h-6 w-6 items-center justify-center rounded-full',
-                day === current && day.isToday && 'bg-indigo-600',
-                day === current && !day.isToday && 'bg-gray-900',
-                'ml-auto',
-              ]"
-              >{{ day.date.date() }}
+            <time :datetime="day.date.toISOString()">
+              {{ day.date.date() }}
             </time>
           </button>
         </div>
@@ -315,7 +196,6 @@
 
 <script setup lang="ts">
 import {
-  ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   EllipsisHorizontalIcon,
@@ -328,6 +208,7 @@ type CalendarDay = {
   date: Moment;
   isCurrentMonth: boolean;
   isToday: boolean;
+  isPast: boolean;
 };
 
 const year: Ref<number> = ref(moment().year());
@@ -344,14 +225,13 @@ const days: ComputedRef<CalendarDay[]> = computed(() => {
   // Calendar starts at first day of first week of the month, even if that day is in the previous month
   let current = startOfMonth.clone().startOf('week');
 
-  console.log(startOfMonth.toLocaleString());
-
   // 42 days in 6 weeks
   for (let i = 0; i < 42; i++) {
     days.push({
       date: current.clone(),
       isCurrentMonth: current.month() === month.value,
-      isToday: current.toDate() == new Date(),
+      isToday: current.toDate().toDateString() === new Date().toDateString(),
+      isPast: current.isBefore(moment().startOf('day')),
     });
     current.add(1, 'day');
   }

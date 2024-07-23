@@ -40,7 +40,10 @@
   },
   "month_view": {
     "go_to_today": "Today",
+    "go_to_today_mobile": "Go to today",
     "next_month": "Next month",
+    "open_menu": "Open menu",
+    "pick_date_button": "Pick date",
     "previous_month": "Previous month"
   },
   "pagination": {
