@@ -15,6 +15,9 @@
           />
         </a>
       </div>
+      <div>
+        <PortalTarget name="layout-header" />
+      </div>
       <div class="flex lg:hidden">
         <button
           type="button"
@@ -101,6 +104,7 @@
 import { ref } from 'vue';
 import { Dialog, DialogPanel } from '@headlessui/vue';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
+import { PortalTarget } from 'portal-vue';
 
 const navigation = [];
 

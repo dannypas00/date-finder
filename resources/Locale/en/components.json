@@ -49,5 +49,16 @@
   "pagination": {
     "next_button": "Next",
     "previous_button": "Previous"
+  },
+  "time_picker": {
+    "duration": {
+      "explanation": "The length of the meeting in hours",
+      "label": "Duration",
+      "placeholder": "A good while.."
+    },
+    "start": {
+      "label": "Start time",
+      "placeholder": "Good times o' clock.."
+    }
   }
 }

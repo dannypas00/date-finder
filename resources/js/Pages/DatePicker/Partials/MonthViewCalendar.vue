@@ -49,7 +49,8 @@
           <div class="ml-6 h-6 w-px bg-gray-300" />
           <button
             type="button"
-            class="ml-6 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            class="ml-6 rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            @click="emit('date-picked', current.date.toDate())"
           >
             {{ $t('components.month_view.pick_date_button') }}
           </button>
@@ -84,6 +85,7 @@
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
                     "
                     class="block px-4 py-2 text-sm"
+                    @click="emit('date-picked', current.date.toDate())"
                   >
                     {{ $t('components.month_view.pick_date_button') }}
                   </a>
@@ -203,6 +205,7 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import moment, { Moment } from 'moment';
 import { computed, ComputedRef, nextTick, ref, Ref } from 'vue';
+import { isDate } from 'lodash';
 
 type CalendarDay = {
   date: Moment;
@@ -210,6 +213,8 @@ type CalendarDay = {
   isToday: boolean;
   isPast: boolean;
 };
+
+const emit = defineEmits({ 'date-picked': (date: Date) => isDate(date) });
 
 const year: Ref<number> = ref(moment().year());
 const month: Ref<number> = ref(moment().month());
