@@ -1,3 +1,6 @@
 {
+  "app": {
+    "name": "Date Finder"
+  },
   "cancel": "Cancel"
 }

@@ -14,8 +14,6 @@ interface NavigationItem {
 }
 
 const layoutNavigationItems: NavigationItem[] = [
-  { name: 'DataTable Example', route: 'page1', icon: TableCellsIcon },
-  { name: 'Reverb Example', route: 'page2', icon: SpeakerWaveIcon },
 ];
 
 const userNavigationItems: NavigationItem[] = [

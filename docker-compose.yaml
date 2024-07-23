@@ -104,6 +104,7 @@ services:
 
   frank:
     container_name: ${APP_NAME}-frank
+    restart: unless-stopped
     build:
       dockerfile: .docker/local/frankenphp.Dockerfile
       context: .

@@ -7,6 +7,8 @@ use App\Http\Controllers\Users\UserUpdateController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
+Route::inertia('/', 'Marketing/Homepage');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,7 +28,6 @@ Route::middleware([
         });
     });
 
-    Route::inertia('/', 'Page1/DataTableExample')->name('page1');
     Route::inertia('page2', 'Page2/ReverbExample')->name('page2');
     Route::inertia('profile', 'Users/ProfileEdit')->name('me.profile');
     Route::inertia('settings', 'Users/UserSettings')->name('me.settings');
