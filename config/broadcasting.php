@@ -31,17 +31,17 @@ return [
     'connections' => [
 
         'pusher' => [
-            'driver' => 'pusher',
-            'key' => env('REVERB_APP_KEY', 'test'),
-            'secret' => env('REVERB_APP_SECRET', 'test'),
-            'app_id' => env('REVERB_APP_ID', 0),
-            'options' => [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
-                'host' => '172.17.0.1',
-                'port' => 6001,
-                'scheme' => 'http',
+            'driver'         => 'pusher',
+            'key'            => env('REVERB_APP_KEY', 'test'),
+            'secret'         => env('REVERB_APP_SECRET', 'test'),
+            'app_id'         => env('REVERB_APP_ID', 0),
+            'options'        => [
+                'cluster'   => env('PUSHER_APP_CLUSTER'),
+                'host'      => '172.17.0.1',
+                'port'      => 6001,
+                'scheme'    => 'http',
                 'encrypted' => true,
-                'useTLS' => false,
+                'useTLS'    => false,
             ],
             'client_options' => [
                 // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html
@@ -50,11 +50,11 @@ return [
 
         'ably' => [
             'driver' => 'ably',
-            'key' => env('ABLY_KEY'),
+            'key'    => env('ABLY_KEY'),
         ],
 
         'redis' => [
-            'driver' => 'redis',
+            'driver'     => 'redis',
             'connection' => 'default',
         ],
 

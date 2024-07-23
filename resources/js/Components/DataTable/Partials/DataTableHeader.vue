@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts" generic="T extends Record<string, any>">
-import { computed, inject, PropType, Ref, ref } from 'vue';
+import { computed, inject, PropType, Ref } from 'vue';
 import { DateFilterType, FilterType, TableHeader } from '../DataTableTypes';
 import DataTableSearchFilter from './Filters/DataTableSearchFilter.vue';
 import DataTableDateRangeFilter from './Filters/DataTableDateRangeFilter.vue';

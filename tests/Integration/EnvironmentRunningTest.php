@@ -2,7 +2,6 @@
 
 namespace Tests\Integration;
 
-use Auth;
 use DB;
 use Http;
 use Illuminate\Database\Console\Migrations\StatusCommand as MigrationStatusCommand;
