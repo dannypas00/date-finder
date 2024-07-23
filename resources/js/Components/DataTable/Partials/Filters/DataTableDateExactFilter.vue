@@ -16,11 +16,7 @@
 
 <script setup lang="ts" generic="T extends Record<string, any>">
 import { computed, inject, PropType, ref, Ref, WritableComputedRef } from 'vue';
-import {
-  DateFilterOption,
-  DateRangeValue,
-  SearchFilterOption,
-} from '../../DataTableTypes';
+import { DateFilterOption } from '../../DataTableTypes';
 
 const props = defineProps({
   filter: {

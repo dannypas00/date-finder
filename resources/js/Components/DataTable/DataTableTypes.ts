@@ -1,8 +1,8 @@
 import i18n from '../../i18n';
+import I18n from '../../i18n';
 import { FontAwesomeIconProps } from '../Icons/FontAwesomeIconProps';
 import { QueryBuilderIndexRequest } from '../../Communication/Base/QueryBuilderIndexRequest';
 import moment from 'moment';
-import I18n from '../../i18n';
 import { SortDirection } from '../../Utilities/SortDirection';
 
 export type DateRangeValue = {

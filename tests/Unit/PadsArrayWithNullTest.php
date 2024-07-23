@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use App\Traits\PadsArrayWithNull;
-
 use Tests\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
