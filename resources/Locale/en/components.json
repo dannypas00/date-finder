@@ -38,6 +38,11 @@
     "view_notifications": "View notifications",
     "your_profile": "Your profile"
   },
+  "month_view": {
+    "go_to_today": "Today",
+    "next_month": "Next month",
+    "previous_month": "Previous month"
+  },
   "pagination": {
     "next_button": "Next",
     "previous_button": "Previous"
